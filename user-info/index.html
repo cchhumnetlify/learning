@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlotte Chhum</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<body>
+    
+    <div id="main-container">
+        <div>
+            <form id="userInfo">
+                <label for="answer">Your answer:</label>
+                <input type="text" id="answer" name="answer">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div id="responses">
+            <ul id="userResponses"></ul>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+        
+        const questionsArray = [
+            "What is your name?",
+            "What is your age?",
+            "What is your favorite color?",
+            "Where do you live?"
+        ];
+
+        let currentQuestion = 0;
+
+        let answersArray = [];
+
+        let userInfo = document.getElementById("userInfo");
+
+        let clearButton = document.createElement('button');
+        clearButton.textContent = "Reset";
+        clearButton.id = "clearButton";
+
+        function showQuestion() {
+            document.getElementById('userInfo').innerHTML = `
+                <label>${questionsArray[currentQuestion]}</label>
+                <input type="text" id="answer" name="answer"></input>
+                <button type="submit">Submit</button>
+            `;
+        };
+
+        function showResponse(response) {
+            let userResponses = document.getElementById('userResponses');
+            let listItem = document.createElement('li');
+            listItem.textContent= response;
+            userResponses.appendChild(listItem);
+        };
+
+        function storeResponse(answer) {
+            answersArray.push(answer);
+        };
+
+        //show first question
+        showQuestion();
+
+
+        //click event
+        document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('userInfo').addEventListener('submit', function(event) {
+            
+            event.preventDefault(); //prevent form submission
+            
+            let answerInput = document.getElementById('answer');
+            let answer = answerInput.value;
+
+            //show answer
+            showResponse(answer);
+            
+            //store answer
+            storeResponse(answer);
+            console.log(answersArray);
+
+            currentQuestion++;
+
+            if (currentQuestion < questionsArray.length) {
+                showQuestion();
+            } else {
+                userInfo.innerHTML = "You're done!";
+                userInfo.append(clearButton);
+
+                clearButton.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    clearButton.focus();
+                    answersArray.length = 0;
+                    console.log("answers array is now: " + answersArray.length)
+                    });
+
+            };   
+        });
+    });
+    </script>
+    
+</body>
+</html>
