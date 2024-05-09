@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charlotte Chhum</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     
     <div id="main-container">
+        <h1>User Information</h1>
         <div>
             <form id="userInfo">
                 <label for="answer">Your answer:</label>
@@ -21,43 +22,48 @@
             <ul id="userResponses"></ul>
         </div>
     </div>
-    <!-- secret changes-->
+
     <script type="text/javascript">
         
         const questionsArray = [
             "What is your name?",
             "What is your age?",
             "What is your favorite color?",
-            "Where do you live?"
         ];
-
+        
         let currentQuestion = 0;
+        
+        let responsesList = document.getElementById('userResponses');
 
         let answersArray = [];
 
         let userInfo = document.getElementById("userInfo");
 
-        let clearButton = document.createElement('button');
-        clearButton.textContent = "Reset";
-        clearButton.id = "clearButton";
+        let resetButton = document.createElement('button');
+        resetButton.textContent = "Reset";
+        resetButton.id = "resetButton";
 
         function showQuestion() {
             document.getElementById('userInfo').innerHTML = `
-                <label>${questionsArray[currentQuestion]}</label>
+                <label class="questions">${questionsArray[currentQuestion]}</label>
                 <input type="text" id="answer" name="answer"></input>
                 <button type="submit">Submit</button>
             `;
-        };
-
-        function showResponse(response) {
-            let userResponses = document.getElementById('userResponses');
-            let listItem = document.createElement('li');
-            listItem.textContent= response;
-            userResponses.appendChild(listItem);
+            answerInput.focus();
         };
 
         function storeResponse(answer) {
             answersArray.push(answer);
+        };
+
+        function showResponses() {
+    
+    
+            answersArray.forEach(function(answer) {
+                let listItem = document.createElement('li');
+                listItem.textContent = answer
+                responsesList.appendChild(listItem);
+            });
         };
 
         //show first question
@@ -72,9 +78,6 @@
             
             let answerInput = document.getElementById('answer');
             let answer = answerInput.value;
-
-            //show answer
-            showResponse(answer);
             
             //store answer
             storeResponse(answer);
@@ -86,19 +89,26 @@
                 showQuestion();
             } else {
                 userInfo.innerHTML = "You're done!";
-                userInfo.append(clearButton);
+                userInfo.append(resetButton);
 
-                clearButton.addEventListener("click", function(event) {
+                resetButton.addEventListener("click", function(event) {
                     event.preventDefault();
-                    clearButton.focus();
+                    resetButton.focus();
                     answersArray.length = 0;
-                    console.log("answers array is now: " + answersArray.length)
-                    });
+                    console.log("answers array is now: " + answersArray.length);
+                    responsesList.textContent = '';
+                    resetButton.style.display = "none";
+                    showQuestion();
 
-            };   
+                    });
+            showResponses();
+            }; 
         });
     });
+
+
     </script>
     
 </body>
 </html>
+
