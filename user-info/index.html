@@ -39,17 +39,12 @@
 
         let userInfo = document.getElementById("userInfo");
 
-        let resetButton = document.createElement('button');
-        resetButton.textContent = "Reset";
-        resetButton.id = "resetButton";
-
         function showQuestion() {
             document.getElementById('userInfo').innerHTML = `
                 <label class="questions">${questionsArray[currentQuestion]}</label>
                 <input type="text" id="answer" name="answer"></input>
                 <button type="submit">Submit</button>
             `;
-            answerInput.focus();
         };
 
         function storeResponse(answer) {
@@ -89,15 +84,19 @@
                 showQuestion();
             } else {
                 userInfo.innerHTML = "You're done!";
+                let resetButton = document.createElement('button');
+                resetButton.textContent = "Reset";
+                resetButton.className = "resetButton";
                 userInfo.append(resetButton);
 
                 resetButton.addEventListener("click", function(event) {
                     event.preventDefault();
                     resetButton.focus();
-                    answersArray.length = 0;
+                    answersArray = [];
                     console.log("answers array is now: " + answersArray.length);
                     responsesList.textContent = '';
                     resetButton.style.display = "none";
+                    currentQuestion = 0;
                     showQuestion();
 
                     });
