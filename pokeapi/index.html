@@ -10,12 +10,16 @@
 <body>
     
     <div id="main-container">
-        <h1>learning projects</h1>
-        <div id="projectList">
-            <ul>
-                <li><a href="/user-info">user information</a></li>
-                <li><a href="/pokeapi">pokeapi</a></li>
-            </ul>
+        <h1>pokeapi</h1>
+        <div>
+            <form id="userInfo">
+                <label for="answer">Your answer:</label>
+                <input type="text" id="answer" name="answer">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div id="responses">
+            <ul id="userResponses"></ul>
         </div>
     </div>
 
@@ -23,4 +27,3 @@
     
 </body>
 </html>
-
