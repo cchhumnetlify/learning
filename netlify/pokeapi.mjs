@@ -1,6 +1,3 @@
-exports.handler = async (event, context) => {
-    return {
-        statusCode: 200,
-        body: "test",
-    }
-};
+export default async (req, context) => {
+    return new Response("Hello, world!");
+  };
