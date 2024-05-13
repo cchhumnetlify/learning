@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'Superscript'; 
+    src: url('../fonts/superscript.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'DogicaPixel';
+    src: url('../fonts/dogicapixel.ttf') format('truetype');
+  }
+  
+  #main-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+  }
+  
+  .flex-item {
+      text-align: center; 
+      padding: 20px;
+  }
+    
+    body {
+      background-image: url('/images/pinkbg.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-family: "DogicaPixel", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+  }
+  
+    h1 {
+      font-family: 'Superscript';
+      font-size: 10vw;
+      padding-right: 20px;
+  }
+  
+.answered {
+    display: hidden;
+}
+  
+    
+  
