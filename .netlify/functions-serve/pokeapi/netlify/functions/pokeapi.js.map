@@ -1,8 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../Users/charlottechhum/Desktop/repos/learning/netlify/functions/pokeapi.mjs"],
-  "sourceRoot": "/tmp/tmp-17850-J8WAXsuTXQsi",
-  "sourcesContent": ["exports.handler = async (event, context) => {\n    return {\n        statusCode: 200,\n        body: \"test\",\n    }\n};"],
-  "mappings": ";AAAA,QAAQ,UAAU,OAAO,OAAO,YAAY;AACxC,SAAO;AAAA,IACH,YAAY;AAAA,IACZ,MAAM;AAAA,EACV;AACJ;",
-  "names": []
-}
