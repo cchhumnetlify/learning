@@ -1,8 +1,11 @@
 export default async (req, context) => {
 
     const { pokemon } = context.params;
-
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+    console.log("function call started");
+    
+    
+    console.log("calling the url " + `https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
 
         if(!response.ok){
             throw new Error("Could not find pokemon");
@@ -15,10 +18,13 @@ export default async (req, context) => {
 
         // imgElement.src = pokemonSprite;
         // imgElement.style.display = "block";
-
+    console.log("returning pokemon sprite for " + pokemonSprite);
+    console.log("function call ended");
     return pokemonSprite;
   };
 
   export const config = {
     path: "/pokemon/:pokemon"
   };
+
+
