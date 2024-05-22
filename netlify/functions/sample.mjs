@@ -21,7 +21,7 @@ export default async (req, context) => {
     console.log("returning pokemon sprite for " + pokemonSprite);
     console.log("function call ended");
     return {
-        body: JSON.stringify({ pokemonsprite: pokemonSprite }),
+        body:pokemonSprite,
         statusCode: 200
       };
   };
