@@ -20,7 +20,10 @@ export default async (req, context) => {
         // imgElement.style.display = "block";
     console.log("returning pokemon sprite for " + pokemonSprite);
     console.log("function call ended");
-    return pokemonSprite;
+    return {
+        body: JSON.stringify({ pokemonsprite: pokemonSprite }),
+        statusCode: 200
+      };
   };
 
   export const config = {

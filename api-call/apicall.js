@@ -20,7 +20,9 @@ async function fetchPokemon(){
         
         const response = await fetch(`/pokemon/${pokemonName}`);
 
-        console.log(response);
+        const data = await response.json();
+
+        console.log(data);
         // if(!response.ok){
         //     throw new Error("Could not find pokemon");
         // }
