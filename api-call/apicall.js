@@ -14,21 +14,24 @@ fetchPokemon();
 async function fetchPokemon(){
     try {
 
+        //client-side
         const pokemonName = document.getElementById("pokemonName").value.toLowerCase();
+        //
+        
+        const response = await fetch(`/pokemon/${pokemonName}`);
 
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+        console.log(response);
+        // if(!response.ok){
+        //     throw new Error("Could not find pokemon");
+        // }
 
-        if(!response.ok){
-            throw new Error("Could not find pokemon");
-        }
+        // const data = await response.json();
 
-        const data = await response.json();
+        // const pokemonSprite = data.sprites.front_default;
+        // const imgElement = document.getElementById("pokemonSprite");
 
-        const pokemonSprite = data.sprites.front_default;
-        const imgElement = document.getElementById("pokemonSprite");
-
-        imgElement.src = pokemonSprite;
-        imgElement.style.display = "block";
+        // imgElement.src = pokemonSprite;
+        // imgElement.style.display = "block";
     }
     catch(error){
         console.error(error);
