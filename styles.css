@@ -33,11 +33,44 @@
       font-family: 'AquaWow';
       font-size: 10vw;
       padding-right: 20px;
+      padding-bottom: 0px;
       text-align: center;
+      margin: 0px, 0px, 5px, 0px;
   }
   
 .answered {
     display: hidden;
+}
+
+.box {
+  margin:10px auto;
+  display:table;
+}
+.button{
+  border: 3px solid #32435c;
+    background: white;
+    color: #32435c;
+    text-decoration: none;
+  box-shadow: 5px 5px #32435c;
+  padding:10px 20px;
+      -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+  text-decoration:none;
+}
+.button:hover, .button:focus, .button:active {
+  background-color:  #32435c;
+  color: #ffffff;
+}
+
+.button {
+  font-family:'DogicaPixel';
+}
+
+.input {
+  font-family:'DogicaPixel';
+  font-size: 14pt;
+  width: 300px;
 }
 
 
