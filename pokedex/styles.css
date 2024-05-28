@@ -1,0 +1,77 @@
+@font-face {
+  font-family: 'AquaWow'; 
+  src: url('aqua-wow.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DogicaPixel';
+  src: url('dogicapixel.ttf') format('truetype');
+}
+
+#main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  text-align: center;
+}
+  
+body {
+  background-color: #8EC5FC;
+  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 52%);
+  font-family: "DogicaPixel", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+  font-family: 'AquaWow';
+  font-size: 10vw;
+  padding-right: 20px;
+  padding-bottom: 0px;
+  text-align: center;
+  margin: 0;
+}
+
+.box {
+  margin: 10px auto;
+  display: table;
+}
+
+.button {
+  border: 3px solid #32435c;
+  background: white;
+  color: #32435c;
+  text-decoration: none;
+  box-shadow: 5px 5px #32435c;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in;
+  font-family: 'DogicaPixel';
+}
+
+.button:hover, .button:focus, .button:active {
+  background-color: #32435c;
+  color: #ffffff;
+}
+
+.input {
+  font-family: 'DogicaPixel';
+  font-size: 14pt;
+  width: 300px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+#pokemonSprite {
+  display: block;
+  margin: auto;
+  max-width: 100%; 
+  height: auto; 
+}
