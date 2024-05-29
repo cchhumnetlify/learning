@@ -1,0 +1,38 @@
+
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background-color: #000000;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.schedule-table, .exercise-table, .challenges, .personal-bests {
+    background-color: white;
+    border: 3px solid #000;
+    border-radius: 15px;
+    align-items: flex-start;
+    display: flex;
+    align-items: center;
+}
+.div-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.div1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+user agent stylesheet
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+body {
+    background: url(https://img.freepik.com/premium-vector/abstract-distorted-grid-background-thin-black-line-white_760443-210.jpg?w=2000);
+    font-family: "Epilogue", sans-serif;
+    background-size: cover;
+    padding: 10px 50px;
+}
